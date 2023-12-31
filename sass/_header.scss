@@ -1,0 +1,20 @@
+.hero-header {
+   // height: 962px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+    .hero-header__img {
+        object-fit: cover;
+        max-height: 962px;
+        //height: 962px;
+        width: 100%;
+    }
+
+    .hero-header__title {
+        position: absolute;
+        max-width: 100%;
+        padding: 5%;
+    }
+}
+

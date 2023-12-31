@@ -1,0 +1,118 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+//
+/* **** Ouverture de l'overlay ****** */
+.open {
+    opacity: 1;
+    visibility: visible;
+   // height: calc(100% - 80px);
+    animation: fade-in-move-down 2s 300ms both;
+  }
+
+//
+    .popup {
+    margin: 70px;
+    padding: 20px;
+    background: #ffffff;
+    border: 5px solid #000000;
+    border-radius: 5px;
+    transition: all 2s ease-in-out;
+    position: absolute;
+    //top: 50%;
+    //left: 50%;
+    //transform: translate(-50%, -50%);
+    //height: 60vh;
+    //height: 769px;
+    max-width: 597px;
+    //overflow-y: auto;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    max-height: 769px;
+    min-height: 583px;
+    }
+
+    .popup__header {
+        width: 168%;
+        height: auto;
+        @media (max-width:768px) {
+
+        }
+    }
+
+
+    .popup .content {
+    max-height: 30%;
+    overflow: auto;
+    }
+
+// zoom avant
+    .animate-zoom-in {animation:animatezoomin 0.6s}
+    @keyframes animatezoomin{from{transform:scale(0)} to{transform:scale(1)}}
+
+
+/* Formulaire */
+
+#wpcf7-f18-o1 .wpcf7-form {
+    width: 263px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    @media (max-width:768px) {
+    width: 190px;
+    }
+
+    .wpcf7-text {
+        width: 263px;
+        height: 34px;
+        border-radius: 8px;
+        border: 1px solid #B8BBC2;
+        @media (max-width:768px) {
+            width: 190px;
+            }
+        
+    }
+
+    .wpcf7-textarea {
+        width: 263px;
+        height: 210px;
+        border-radius: 8px;
+        border: 1px solid #B8BBC2;
+        @media (max-width:768px) {
+            width: 190px;
+            }
+        
+    }
+    
+    .wpcf7-submit {
+        width: 263px;
+        height: 50px;
+        border-radius: 2px;
+        background-color: #D8D8D8;
+        box-shadow: 0px 2px 1px 0px #00000005;
+        border: 0;
+        @media (max-width:768px) {
+            width: 190px;
+            }
+        
+    }
+
+
+}
+
+

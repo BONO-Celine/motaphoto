@@ -1,0 +1,84 @@
+// Reset 
+* {
+    box-sizing:border-box; 
+    outline:none;
+    margin:0;
+    padding:0;
+  }
+
+//***********************************************************************************
+/* Overlay */
+//***********************************************************************************
+.menu-mobile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    max-width: 768px;
+    background: #E00000;
+    height: 0%;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: 5;
+
+    .menu-menu-principal-container {
+        position: relative;
+        font-size: 64px;
+        font-weight: 400;
+        text-align: center;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        @media (max-width: 480px) {
+        font-size: 1.5rem;
+        }
+        @media (min-width:481px) and (max-width:768px),  (min-width:769px) and (max-height:720px) {
+        font-size: 3rem;
+        }
+        //liste de liens du menu
+        ul {
+            list-style: none;
+            display: flex;
+            gap: 70px;
+            flex-direction: column;
+        
+            li {
+                //height: 25%;
+                //min-height: 50px;
+                //position: relative;
+        
+                a {
+                //position: relative;
+                color: #FFFFFF;
+                text-decoration: none;
+                overflow: hidden;
+                font-size: 44px;
+                font-weight: 400;
+                line-height: 65px;
+                text-align: center;
+
+                // Ombre colorée sur les liens du menu au survol de la souris
+                &:hover {
+                    font-weight: 700;
+                }
+                }
+            }
+        }
+    }
+}
+  /* **** Ouverture de l'overlay ****** */
+  .open-menu-mobile {
+    opacity: 1;
+    visibility: visible;
+    //height: calc(100% - 80px);
+    //height: 100%;
+    animation: fade-in-move-down 2s 300ms both;
+    height: calc(100% - 80px);
+    margin-top: 80px;
+  }
+  // ***********************************
+  
