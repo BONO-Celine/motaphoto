@@ -1,0 +1,79 @@
+body {
+    margin: auto;
+    max-width: 1440px;
+    min-width: 280px;
+}
+
+.site-main {
+    //margin: 80px 146px 0 146px;
+    //padding: 80px 5% 0 5%;
+    margin: 80px 10% 0 10%;
+    @media (max-width:768px) {
+        margin: 0;
+    }
+}
+
+body {
+    font-family: "Space Mono";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+
+h1 {
+    font-family: "Space Mono";
+    font-size: 96px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 142px;
+    text-align: left;
+    margin: 80px 0 20px 0;
+    @media (max-width:768px) {
+        font-size: 28px;
+        line-height: 41px;
+    }
+}
+
+h2 {
+    font-family: "Space Mono";
+    font-size: 66px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 58px;
+    text-align: left;
+    margin: 40px 0 20px 0;
+    @media (max-width:768px) {
+        font-size: 46px;
+        line-height: 48px;
+    }
+}
+
+
+h3 {
+    font-family: "Space Mono";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0.1em;
+    text-align: left;
+}
+
+//styleName: p;
+p {
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 21px;
+    text-align: left;
+}
+
+label {
+    font-family: Poppins;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    text-align: left;
+}

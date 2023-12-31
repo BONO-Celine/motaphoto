@@ -1,0 +1,61 @@
+// *******************************
+/* Barre du menu footer */
+// *******************************
+.site-footer {
+    //position: sticky;
+    //display: flex;
+    //align-items: center;
+    //justify-content: center; 
+    height: 40px;
+    max-width: 1440px;
+    background-color: #FFFFFF;
+    border-top: 1px solid #000000;
+    margin-top: 5%;
+   // @media (max-width:768px) {
+       // margin-top: 0;
+    //}
+
+    .site-info {
+        height: inherit;
+
+        .menu-menu-footer-container{
+            height: inherit;
+            @media (max-width:768px) {
+                display: grid;
+                width: 100%;
+                justify-content: center;
+                //padding-bottom: 30px;
+                //margin-top: 30px;
+            }
+        }
+
+            .menu-footer {
+                list-style-type: none;
+                display: flex;
+                gap: 45px;
+                height: inherit;
+                align-items: center;
+                justify-content: center;
+                //flex-wrap: wrap;
+                @media (max-width:768px) {
+                    padding-bottom: 30px;
+                    margin-top: 30px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 30px;
+                    align-items: center;
+                    height: 100%;
+                }
+        
+                li a {
+                    text-decoration: none;
+                    color: #000000;
+                    &:hover {
+                        font-weight: 700;
+                    }
+                }
+            }
+    }
+
+}
+    
