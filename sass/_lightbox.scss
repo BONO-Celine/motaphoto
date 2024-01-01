@@ -84,10 +84,18 @@
   align-items: center;
   flex-wrap: wrap;
   cursor: pointer;
-  justify-content: space-around;
+  //justify-content: space-around;
   margin: 5px;
+  width: 150px;
+
+  @media (max-width:900px) {
+    width: auto;
+  }
 }
 
+.lightbox-left-navigation {
+  justify-content: right;
+}
 
 .previous-img-link, 
 .next-img-link {

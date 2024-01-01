@@ -45,7 +45,8 @@ jQuery(function ($) {
         const selectedFormat = $("#select-formats .selected-option").data(
           "value"
         );
-        const sortType = $("#select-by-date .selected-option").data("sort-type");
+        const sortType = $("#select-by-date .selected-option").data("value");
+        console.log(sortType);
   
         $.ajax({
           type: "POST",
@@ -159,7 +160,9 @@ jQuery(function ($) {
         const selectedFormat = $("#select-formats .selected-option").data(
           "value"
         );
-  
+
+        const sortType = $("#select-by-date .selected-option").data("value");
+          console.log(sortType);
         // Effectuer une requête AJAX pour récupérer les résultats filtrés
         $.ajax({
           url: ajaxurl, // Utiliser la variable ajaxurl définie par WordPress
@@ -168,6 +171,7 @@ jQuery(function ($) {
             action: "filter_posts", // Action defini dans fichier functions.php
             category: selectedCategory,
             format: selectedFormat,
+            sortType: sortType,
           },
           success: function (response) {
             // Mise à jour du contenu de la balise div avec les résultats filtrés
@@ -251,8 +255,9 @@ jQuery(function ($) {
         "value"
       );
       const selectedFormat = $("#select-formats .selected-option").data("value");
-      const sortType = $("#select-by-date .selected-option").data("sort-type");
+      const sortType = $("#select-by-date .selected-option").data("value");
   
+      console.log(sortType);
       $.ajax({
         url: ajaxurl,
         type: "POST",

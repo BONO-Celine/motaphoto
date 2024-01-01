@@ -77,7 +77,7 @@ add_image_size( 'single-photo-thumbnail-size', 81, 71, true );
 function load_more_posts() {
   $args = array(
       'post_type' => 'photos',
-      'posts_per_page' => 2,
+      'posts_per_page' => 4,
       'ignore_sticky_posts' => 1,
       'paged' => $_POST['page'],
   );
@@ -174,7 +174,7 @@ function filter_posts() {
    // Construire les arguments de la requête WP_Query en fonction des filtres
    $args = array(
       'post_type' => 'photos',
-      'posts_per_page' => 2,
+      'posts_per_page' => 4,
       'ignore_sticky_posts' => 1,
    );
 
@@ -210,16 +210,18 @@ function filter_posts() {
 }*/
 
 // Ajouter le tri par date si spécifié
-if ($sortType === 'asc') {
-  $args['orderby'] = 'meta_value';
-  $args['meta_key'] = 'annee';
-  $args['meta_type'] = 'DATE';
-  $args['order'] = 'ASC';
-} elseif ($sortType === 'desc') {
-  $args['orderby'] = 'meta_value';
-  $args['meta_key'] = 'annee';
-  $args['meta_type'] = 'DATE';
-  $args['order'] = 'DESC';
+if (!empty($_POST['sortType'])) {
+  if ($_POST['sortType'] === 'asc') {
+      $args['orderby'] = 'meta_value';
+      $args['meta_key'] = 'annee';
+      $args['meta_type'] = 'DATE';
+      $args['order'] = 'ASC';
+  } elseif ($_POST['sortType'] === 'desc') {
+      $args['orderby'] = 'meta_value';
+      $args['meta_key'] = 'annee';
+      $args['meta_type'] = 'DATE';
+      $args['order'] = 'DESC';
+  }
 }
 
 

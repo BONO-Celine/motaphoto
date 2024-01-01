@@ -87,8 +87,8 @@
         <button class="dropdown-button" id="mainDropdownButtonDate">TRIER PAR</button>
             <div class="dropdown-content">
                 <button class="dropdown-item dropdown-item--title-colors" data-value="">Trier par</button>
-                <button class="dropdown-item" data-value="newest" data-sort-type="desc">Plus récents</button>
-                <button class="dropdown-item" data-value="oldest" data-sort-type="asc">Plus anciens</button>
+                <button class="dropdown-item" data-value="desc">Plus récents</button>
+                <button class="dropdown-item" data-value="asc">Plus anciens</button>
             </div>
     </div>
 </div>
