@@ -1,7 +1,6 @@
-
- /**********************************************
-   * CODE LIGHTBOX 
-   **********************************************/
+/************************************************/
+   /* CODE LIGHTBOX */
+/* **********************************************/
 var $ = jQuery;
 var currentIndex = 0;
 var postsData = [];
@@ -55,15 +54,21 @@ $(document).ready(function () {
 
         // Appeler la fonction openLightbox avec les données récupérées
         openLightbox(imageUrl, imageRef, imageCategorie);
+        $("#lightbox").removeClass("animate-zoom-out");
+        $("#lightbox").addClass("animate-zoom-in");
     });
-    console.log(postsData); // Ajout de cette ligne pour vérifier les données
+    console.log(postsData); // Vérification des données
     // Fermer la lightbox au clic sur la croix de fermeture
     $(".close-lightbox").on("click", function () {
-        closeLightbox();
+        //closeLightbox();
+        $("#lightbox").removeClass("animate-zoom-in");
+        $("#lightbox").addClass("animate-zoom-out");
+        setTimeout(closeLightbox, 500);
     });
     
     // Événements clic sur les flèches
-    $("#lightbox-left-navigation").on("click", function () {
+    //$("#lightbox-left-navigation").on("click", function () {
+    $("#lightbox-right-navigation").on("click", function () {
         if (currentIndex > 0) {
             currentIndex--;
         } else {
@@ -76,7 +81,8 @@ $(document).ready(function () {
         );
     });
 
-    $("#lightbox-right-navigation").on("click", function () {
+    //$("#lightbox-right-navigation").on("click", function () {
+    $("#lightbox-left-navigation").on("click", function () {
         if (currentIndex < postsData.length - 1) {
             currentIndex++;
         } else {

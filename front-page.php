@@ -2,16 +2,6 @@
 
 <main>
 
-<!--
-<div class="hero-header">
-    <img class="hero-header__title" src="<?php echo get_template_directory_uri(); ?>/assets/images/titre-header.svg" 
-				alt="Titre du header : PHOTOGRAPHE EVENT">
-   <?php
-		//$aleatoire=rand(0, 15);
-		//echo '<img class="hero-header__img" src="./wp-content/themes/motatests/assets/images/nathalie-'.$aleatoire.'.webp">';
-	?>
-</div> -->
-
 <!-- ********************************************** HEADER image aléatoire ******************************************* -->
 <div class="hero-header">
     <img class="hero-header__title" src="<?php echo get_template_directory_uri(); ?>/assets/images/titre-header.svg" alt="Titre du header : PHOTOGRAPHE EVENT">
@@ -31,7 +21,14 @@
         }
 
         $aleatoire = rand(0,  count($images) - 1);
-        echo '<img class="hero-header__img" src="'. $images[$aleatoire][0] . '">';
+       // echo '<img class="hero-header__img" alt="test" src="'. $images[$aleatoire][0] . '">';
+
+
+ // Récupérer l'attribut alt de l'image actuelle
+ $alt_text = get_post_meta($query_images->posts[$aleatoire]->ID, '_wp_attachment_image_alt', true);
+
+ echo '<img class="hero-header__img" alt="' . esc_attr($alt_text) . '" src="'. $images[$aleatoire][0] . '">';
+
     ?>
 </div>
 <!-- ---------------------------------------------------------------------------------- -->
@@ -61,7 +58,7 @@
                 </div>
             </div>
 
-                <!-- ----------------------------------------------------- -->
+    <!-- ----------------------------------------------------- -->
             <!-- liste deroulante Formats -->
             <div class="custom-dropdown" id="select-formats">
                 <button class="dropdown-button" id="mainDropdownButtonFormats">FORMATS</button>
@@ -81,25 +78,25 @@
         </div>
 
     <!-- ----------------------------------------------------- -->
-    <!-- liste deroulante date -->
+        <!-- liste deroulante date -->
 
-    <div class="custom-dropdown" id="select-by-date">
-        <button class="dropdown-button" id="mainDropdownButtonDate">TRIER PAR</button>
-            <div class="dropdown-content">
-                <button class="dropdown-item dropdown-item--title-colors" data-value="">Trier par</button>
-                <button class="dropdown-item" data-value="desc">Plus récents</button>
-                <button class="dropdown-item" data-value="asc">Plus anciens</button>
-            </div>
-    </div>
+        <div class="custom-dropdown" id="select-by-date">
+            <button class="dropdown-button" id="mainDropdownButtonDate">TRIER PAR</button>
+                <div class="dropdown-content">
+                    <button class="dropdown-item dropdown-item--title-colors" data-value="">Trier par</button>
+                    <button class="dropdown-item" data-value="desc">Plus récents</button>
+                    <button class="dropdown-item" data-value="asc">Plus anciens</button>
+                </div>
+        </div>
 </div>
 <!-- ----------------------------------------------------- -->
 <!-- --------- Liste des cards ----------- -->
-<!-- -------------------- -->
+<!-- ----------------------------------------------------- -->
         <div class="grid-container" id="post-container">
             <?php
             $args = array(
                 'post_type' => 'photos',
-                'posts_per_page' => 4,
+                'posts_per_page' => 12,
                 'ignore_sticky_posts' => 1,
             );
 

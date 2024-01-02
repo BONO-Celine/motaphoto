@@ -1,11 +1,14 @@
-// S'assure que le document est entièrement chargé et crée la variable $
+// Crée la variable $
 jQuery(function ($) {
 
     /**********************************************
      * OVERLAY (modale Contact)
      **********************************************/
     $(".menu__contact, .btn-contact").click(function () {
-      $(".overlay").toggleClass("open animate-zoom-in"); //« toggle » permet de permuter la classe "open". Elle est supprimée si elle existe sinon elle est ajoutée
+    //« toggle » permet de permuter la classe "open". Elle est supprimée si elle existe sinon elle est ajoutée
+      //$(".overlay").toggleClass("open animate-zoom-in"); 
+      $(".overlay").removeClass("animate-zoom-out");
+      $(".overlay").addClass("open animate-zoom-in");
     });
   
   
@@ -16,16 +19,9 @@ jQuery(function ($) {
       ) {
         //Si Le clic s'est produit en dehors de l'élément popup et l'element overlay a la class open
         $(".overlay").removeClass("open animate-zoom-in");
+        $(".overlay").addClass("animate-zoom-out");
       }
     });
-  
-    /**********************************************
-     * Card
-     **********************************************/
-    $(".hover").mouseleave(function () {
-      $(this).removeClass("hover");
-    });
-  
   
     /**********************************************
      * Bouton charger plus
@@ -291,7 +287,7 @@ jQuery(function ($) {
     $(".no-link").find("a").contents().unwrap();
   
     /**********************************************
-     *Ajout Réf formulaire contact 
+     *Ajout Réf formulaire Contact Form 7
      **********************************************/
     $(".btn-contact").on("click", function (e) {
       e.preventDefault();

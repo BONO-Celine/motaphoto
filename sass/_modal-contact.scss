@@ -65,6 +65,19 @@
     .animate-zoom-in {animation:animatezoomin 0.6s}
     @keyframes animatezoomin{from{transform:scale(0)} to{transform:scale(1)}}
 
+// zoom arrière
+.animate-zoom-out {
+    animation: animatezoomout 0.6s;
+  }
+  @keyframes animatezoomout {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(0);
+    }
+  }
+
 
 /* Formulaire */
 
