@@ -2,12 +2,10 @@
 /* Barre de navigation */
 // *******************************
 .main-navigation {
-    //position: sticky;
     position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    //////
     top: 0px;
     height: 80px;
     max-width: 1440px;
@@ -22,13 +20,10 @@
         @media (max-width:768px) {
             display: none;
         }
-    
-
 
         .menu {
             list-style-type: none;
             display: flex;
-            //margin-right: 146px;
             margin: 0 146px 0 0;
             justify-content: flex-end;
             gap: 45px;
@@ -49,20 +44,15 @@
 
     .main-navigation__logo {
         width:auto;
-        //margin-left: 146px;
         margin-left: 10%;
 
         img {
             width: 216px;
+            @media (max-width:768px) { 
+                width: 138px;
+            }
         }
-
-        @media (max-width:768px) { 
-        img {
-            width: 138px;
-        }
-        }
-    }
-    
+    }  
 }
 
 
@@ -72,45 +62,47 @@
 .burger-icon {
     display: none;
 }
+
 @media (max-width:768px) { 
 
-        /* bouton qui contient l'icone burger */
-        .burger-icon {
-            position: absolute;
-            right: 8%;
-            display:block !important;
-            padding:0;
-            width:28px;
-            height:19px;
-            cursor:pointer;
-            background-color: transparent;
-            border: none;
-        }  
-//Ligne centrale qui compose l'icone burger
-.burger-icon__line {
-    display:block;    
+    /* bouton qui contient l'icone burger */
+    .burger-icon {
+    position: absolute;
+    right: 8%;
+    display:block !important;
+    padding:0;
     width:28px;
-    height:1.7px;  
-    background:#000000; 
-    transition: all .5s ease-in-out;
-// Création des lignes du haut et du bas de l'icone burger   
-    &::before, &::after {
-        content:"";
-        width:28px;
-        height:1.7px;
-        position:absolute; 
-        right:0;  
-        background:#000000;   
-        transition: all .5s ease-in-out;
-    }
-    
-    &::before {
-        transform:translateY(-9px)
-    }
+    height:19px;
+    cursor:pointer;
+    background-color: transparent;
+    border: none;
+    }  
 
-    &::after {
-        transform:translateY(9px)
-    }
+    //Ligne centrale qui compose l'icone burger
+    .burger-icon__line {
+        display:block;    
+        width:28px;
+        height:1.7px;  
+        background:#000000; 
+        transition: all .5s ease-in-out;
+        // Création des lignes du haut et du bas de l'icone burger   
+        &::before, &::after {
+            content:"";
+            width:28px;
+            height:1.7px;
+            position:absolute; 
+            right:0;  
+            background:#000000;   
+            transition: all .5s ease-in-out;
+        }
+    
+        &::before {
+            transform:translateY(-9px)
+        }
+
+        &::after {
+            transform:translateY(9px)
+        }
 }
 
 

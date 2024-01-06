@@ -12,12 +12,6 @@
 }
 
 .lightbox-content {
-    //max-width: 100%;
-    //max-height: 100%;
-    //margin: auto;
-    //display: block;
-    //display: flex;
-    //flex-direction: column;
     color: #FFFFFF;
     display: flex;
     align-items: center;
@@ -28,7 +22,6 @@
     position: absolute;
     top: 2%;
     right: 4%;
-    //color: #fff;
     font-size: 24px;
     cursor: pointer;
     margin-top: 20px;
@@ -37,13 +30,10 @@
     border: none;
 }
 
-
-
 .img-infos {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  //padding: 20px 0;
   height: 30px;
   margin: 1% 0;
   align-items: center;
@@ -57,12 +47,9 @@
 }
 
 .lightbox-image {
-  max-width: 80vw; //80% de la largeur de la fenêtre
+  max-width: 75vw; //75% de la largeur de la fenêtre
   max-height: 91vh; //91% de la hauteur de la fenêtre
   margin-top: 3%;
-  @media (max-width:768px) {
-    max-width: 75vw; //75% de la largeur de la fenêtre
-}
 }
 
 .lightbox__ref {
@@ -76,7 +63,6 @@
   letter-spacing: 0.1em;
 }
 
-
 //////////////// NAVIGATION ///////////////////////
 .lightbox-left-navigation,
 .lightbox-right-navigation {
@@ -84,10 +70,9 @@
   align-items: center;
   flex-wrap: wrap;
   cursor: pointer;
-  //justify-content: space-around;
   margin: 5px;
   width: 150px;
-  @media (max-width:900px) {
+  @media (max-width:1200px) {
     width: auto;
   }
 }
@@ -100,7 +85,7 @@
 .next-img-link {
   font-size: 12px;
   margin: 10px;
-  @media (max-width:900px) {
+  @media (max-width:1200px) {
     display: none;
   }
   transition: all ease-out 300ms;
@@ -113,7 +98,6 @@
   width: 25px;
   position: relative;
   background: #FFFFFF;
-  //transition: all 0.2s;
   transition: all ease-out 300ms;
 }
 
@@ -130,8 +114,6 @@
 }
 
 
-
-
 .lightbox-left-navigation:hover .previous-img-arrow, 
 .lightbox-right-navigation:hover .next-img-arrow {
   width: 34px;
@@ -141,7 +123,6 @@
 .next-img-link:hover {
   font-weight: 700;
 }
-
 
 .next-img-arrow::before,
 .next-img-arrow::after {
@@ -173,4 +154,3 @@
   transform: rotate(-45deg);
   transform-origin: right top;
 }
-

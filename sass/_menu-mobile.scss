@@ -23,6 +23,9 @@
     visibility: hidden;
     overflow: hidden;
     z-index: 5;
+    //pour animation
+    transition: all 300ms ease-out;
+    left: 100%;
 
     .menu-menu-principal-container {
         position: relative;
@@ -47,12 +50,8 @@
             flex-direction: column;
         
             li {
-                //height: 25%;
-                //min-height: 50px;
                 //position: relative;
-        
                 a {
-                //position: relative;
                 color: #FFFFFF;
                 text-decoration: none;
                 overflow: hidden;
@@ -61,10 +60,10 @@
                 line-height: 65px;
                 text-align: center;
 
-                // Ombre colorée sur les liens du menu au survol de la souris
-                &:hover {
-                    font-weight: 700;
-                }
+                    &:hover {
+                        // gras sur les liens du menu au survol de la souris
+                        font-weight: 700;
+                    }
                 }
             }
         }
@@ -74,11 +73,10 @@
   .open-menu-mobile {
     opacity: 1;
     visibility: visible;
-    //height: calc(100% - 80px);
-    //height: 100%;
-    animation: fade-in-move-down 2s 300ms both;
     height: calc(100% - 80px);
     margin-top: 80px;
+    //pour animation
+    left: 0;
   }
   // ***********************************
   

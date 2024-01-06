@@ -1,6 +1,5 @@
 .grid-container {
     display: grid;
-    //grid-template-columns: 564px 564px;
     grid-template-columns: minmax(250px, 564px) minmax(250px, 564px);
     margin: 5%;
     gap: 20px;
@@ -8,79 +7,52 @@
     margin-top: 40px;
 
     @media (max-width:768px) {
-        //grid-template-columns: 564px;
         grid-template-columns: minmax(250px, 564px);
         margin: 5% !important;
     }
 }
 
-.selects-taxonomies {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
+/********************************************************************/
+                    /* LISTES DEROULANTES */
+/********************************************************************/
 
 .filters-container {
     display: grid;
     justify-content: center;
-    //grid-template-columns: 564px 564px;
     grid-template-columns: minmax(250px, 564px) minmax(250px, 564px);
     gap: 20px;
     margin: 80px 5% 0 5%;
     align-items: start;
-    //margin-top: 80px;
     @media (max-width:768px) {
-        //grid-template-columns: 564px;
         grid-template-columns: minmax(250px, 564px);
         margin: 5%;
     }
-}
 
-#select-by-date {
-   // display: flex;
-    //justify-content: flex-end;
-    justify-self: end;
-    @media (max-width:768px) {
-        justify-self: start;
+    .selects-taxonomies {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
     }
 
+    #select-by-date {
+        justify-self: end;
+        @media (max-width:768px) {
+            justify-self: start;
+        }
+    }
 }
 
-/*.select-formats{
-    justify-self: end;
-}
 
-
-select {
+.custom-dropdown {
+    position: relative;
+    display: inline-block;
     width: 260px;
-    height: 43px;
-    margin-bottom: 40px;
-    border: 1.3px solid #B8BBC2;
-    border-radius: 8px;
-    padding: 11px 18px;
 }
-
-
-
-#select-categories option:hover {
-    background-color: #FFD6D6;
-    }
-*/
-//********************************************************************
-    // test css
-
-    .custom-dropdown {
-        position: relative;
-        display: inline-block;
-        width: 260px;
-    }
 
     .dropdown-button {
         width: 260px;
         height: 43px;
-        //margin-bottom: 40px;
         border: 1.3px solid #B8BBC2;
         background-color: #ffffff;
         border-radius: 8px;
@@ -90,15 +62,12 @@ select {
     }
 
     .dropdown-button::after {
-        //content: '\25BC'; /* Unicode character for down arrow */
         content: '\276F'; //symbol Heavy Right-Pointing Angle Quotation Mark Ornament
         font-size: 1em;
-        //font-size: 0.8em;
         position: absolute;
         top: 50%;
         right: 10px;
         transform: translateY(-50%) rotate(90deg);
-        //transition: transform 0.3s;
         padding-top: 20px;
     }
     
@@ -123,9 +92,7 @@ select {
         background-color: #ffffff;
         width: 260px;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;
-        //padding-top: 40px;
-        
+        z-index: 1; 
     }
 
     .dropdown-item {
@@ -152,7 +119,6 @@ select {
     }
 
     .selected-option {
-        //background-color: #E00000 !important; /* for the selected option */
         background-color: #E00000;
         color: #FFFFFF;
     }
@@ -166,8 +132,7 @@ select {
     }
 
 
-
-    // 
+// Container du bouton charger plus
 .load-more-btn-container {
     display: flex;
     justify-content: center;

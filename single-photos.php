@@ -27,6 +27,7 @@ get_header(); ?>
                     <?php the_post_thumbnail(); ?>
                     </div>
                     <div class="icon-full-screen">
+                        <!-- Ajout d'attributs de données au bouton pour les utiliser dans le fichier JS -->
                         <button
                         type="button"
                         class="icon-full-screen__button"

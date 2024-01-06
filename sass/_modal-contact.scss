@@ -12,18 +12,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    }
+}
 //
 /* **** Ouverture de l'overlay ****** */
 .open {
     opacity: 1;
     visibility: visible;
-   // height: calc(100% - 80px);
     animation: fade-in-move-down 2s 300ms both;
-  }
+}
 
-//
-    .popup {
+.popup {
     margin: 70px;
     padding: 20px;
     background: #ffffff;
@@ -31,54 +29,44 @@
     border-radius: 5px;
     transition: all 2s ease-in-out;
     position: absolute;
-    //top: 50%;
-    //left: 50%;
-    //transform: translate(-50%, -50%);
-    //height: 60vh;
-    //height: 769px;
     max-width: 597px;
-    //overflow-y: auto;
-
     display: flex;
     align-items: center;
     flex-direction: column;
     overflow: hidden;
     max-height: 769px;
     min-height: 583px;
-    }
+}
 
-    .popup__header {
-        width: 168%;
-        height: auto;
-        @media (max-width:768px) {
+.popup__header {
+    width: 168%;
+    height: auto;
+}
 
-        }
-    }
-
-
-    .popup .content {
-    max-height: 30%;
-    overflow: auto;
-    }
+ /******************************************/
+ /* Animations ouverture et fermeture */   
 
 // zoom avant
-    .animate-zoom-in {animation:animatezoomin 0.6s}
-    @keyframes animatezoomin{from{transform:scale(0)} to{transform:scale(1)}}
+.animate-zoom-in {
+    animation: animatezoomin 0.6s;
+}
+
+@keyframes animatezoomin {
+    from {transform:scale(0);} 
+    to {transform:scale(1);}
+}
 
 // zoom arrière
 .animate-zoom-out {
     animation: animatezoomout 0.6s;
   }
+
   @keyframes animatezoomout {
-    from {
-      transform: scale(1);
-    }
-    to {
-      transform: scale(0);
-    }
+    from {transform: scale(1);}
+    to {transform: scale(0);}
   }
 
-
+/******************************************/   
 /* Formulaire */
 
 #wpcf7-f18-o1 .wpcf7-form {
@@ -121,11 +109,8 @@
         border: 0;
         @media (max-width:768px) {
             width: 190px;
-            }
-        
+            } 
     }
-
-
 }
 
 

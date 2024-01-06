@@ -1,18 +1,20 @@
 /************************************************/
    /* CODE LIGHTBOX */
 /* **********************************************/
-var $ = jQuery;
-var currentIndex = 0;
-var postsData = [];
+var $ = jQuery; // Assigne la bibliothèque jQuery à la variable $
+var currentIndex = 0; // Initialise l'index courant pour le suivi de la position actuelle dans les données
+var postsData = []; // Initialise un tableau pour stocker les données des images sans doublons
 
 function removeDuplicates(array) {
-    return array.filter((value, index, self) => {
+    //filtre le tableau en ne conservant que la première occurrence de chaque élément pour la propriété imageUrl. 
+    return array.filter((value, index, self) => { 
         return self.findIndex(v => v.imageUrl === value.imageUrl) === index;
     });
 }
 
+// Fonction pour initialiser les données de la lightbox en supprimant les doublons
 function initializeLightboxData() {
-    postsData = removeDuplicates(lightboxData || []);
+    postsData = removeDuplicates(lightboxData || []); // Utilise la fonction removeDuplicates pour éliminer les doublons des données
 }
 
 // Fonction pour ouvrir la lightbox avec l'image correspondante
@@ -26,54 +28,57 @@ function openLightbox(imageUrl, imageRef, imageCategorie) {
     lightboxRef.text(imageRef);
     lightboxCategorie.text(imageCategorie);
 
-    lightbox.css("display", "flex"); // Changer diplay:none en flex pour afficher la lightbox
+    lightbox.css("display", "flex"); // Change le style pour afficher la lightbox en utilisant Flexbox
 }
 
 // Fonction pour fermer la lightbox
 function closeLightbox() {
     var lightbox = $("#lightbox");
-    lightbox.css("display", "none");
+    lightbox.css("display", "none"); // Change le style pour cacher la lightbox
 }
 
-// Exécuter la fonction lorsque le document est prêt
+// Exécute la fonction lorsque le document est prêt
 $(document).ready(function () {
-    initializeLightboxData();
+    initializeLightboxData(); // Initialise les données de la lightbox lors du chargement du document
 
-    // Sélectionner tous les boutons avec la classe "icon-full-screen__button"
+    // Sélectionne tous les boutons avec la classe "icon-full-screen__button"
     var fullscreenButtons = $(".icon-full-screen__button");
 
-    // Ajouter un écouteur d'événements à chaque bouton
+    // Ajoute un écouteur d'événements à chaque bouton
     fullscreenButtons.on("click", function () {
-        // Obtenir les données nécessaires à partir des attributs de données ou d'autres attributs du bouton
+        // Obtient les données nécessaires à partir des attributs de données du bouton
         var imageUrl = $(this).data("image-url");
         var imageRef = $(this).data("image-ref");
         var imageCategorie = $(this).data("image-categorie");
 
-        // Réinitialiser le tableau avant de l'actualiser avec les nouvelles données
+        // Réinitialise le tableau avant de l'actualiser avec les nouvelles données
         initializeLightboxData();
 
-        // Appeler la fonction openLightbox avec les données récupérées
+        // Appelle la fonction openLightbox avec les données récupérées
         openLightbox(imageUrl, imageRef, imageCategorie);
+        // Anime l'ouverture de la lightbox en ajoutant et supprimant des classes
         $("#lightbox").removeClass("animate-zoom-out");
         $("#lightbox").addClass("animate-zoom-in");
     });
-    console.log(postsData); // Vérification des données
-    // Fermer la lightbox au clic sur la croix de fermeture
+
+    //console.log(postsData); // Vérification des données
+
+    // Ferme la lightbox au clic sur la croix de fermeture
     $(".close-lightbox").on("click", function () {
-        //closeLightbox();
-        $("#lightbox").removeClass("animate-zoom-in");
-        $("#lightbox").addClass("animate-zoom-out");
-        setTimeout(closeLightbox, 500);
+        // Ajoute et supprime des classes pour animer la fermeture de la lightbox
+        $("#lightbox").removeClass("animate-zoom-in"); 
+        $("#lightbox").addClass("animate-zoom-out"); 
+        setTimeout(closeLightbox, 500); //Exécute la fonction de fermeture après un délai pour laisser l'animation se terminer
     });
     
     // Événements clic sur les flèches
-    //$("#lightbox-left-navigation").on("click", function () {
     $("#lightbox-right-navigation").on("click", function () {
         if (currentIndex > 0) {
             currentIndex--;
         } else {
             currentIndex = postsData.length - 1;
         }
+        // Ouvre la lightbox avec les données de l'image suivante
         openLightbox(
             postsData[currentIndex].imageUrl,
             postsData[currentIndex].imageRef,
@@ -81,13 +86,13 @@ $(document).ready(function () {
         );
     });
 
-    //$("#lightbox-right-navigation").on("click", function () {
     $("#lightbox-left-navigation").on("click", function () {
         if (currentIndex < postsData.length - 1) {
             currentIndex++;
         } else {
             currentIndex = 0;
         }
+        // Ouvre la lightbox avec les données de l'image précédente
         openLightbox(
             postsData[currentIndex].imageUrl,
             postsData[currentIndex].imageRef,
