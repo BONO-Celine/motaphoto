@@ -5,15 +5,18 @@
     max-width: 272px;
     width: 47.4%;
     background-color: #D8D8D8;
-    box-shadow: 0px 2px 1px 0px #00000005;
+    box-shadow: 0px 2px 1px 0px #00000005; ///* offset-x | offset-y | blur-radius | spread-radius | color */
     border-color: #D8D8D8;
     border-radius: 2px;
     transition: all ease-out 500ms;
+    font-family: "Space Mono";
+    font-size: 12px;
     
     &:hover {
         background-color: #000000;
         color: #FFFFFF;
         box-shadow: 0px 2px 1px 0px #00000005;
+        font-weight: 700;
     }
 }
 

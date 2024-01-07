@@ -47,6 +47,14 @@ Version: 1.0
   font-weight: 300;
   src: url("assets/fonts/poppins-v20-latin-300.woff2") format("woff2");
 }
+/* poppins-500 - latin */
+@font-face {
+  font-display: swap;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  src: url("assets/fonts/poppins-v20-latin-500.woff2") format("woff2");
+}
 body {
   margin: auto;
   max-width: 1440px;
@@ -362,6 +370,9 @@ label {
   border-radius: 8px;
   padding: 11px 18px;
   text-transform: uppercase;
+  font-family: "Poppins";
+  font-size: 12px;
+  font-weight: 500;
   text-align: left;
 }
 
@@ -403,6 +414,9 @@ label {
   padding: 12px;
   text-decoration: none;
   display: block;
+  font-family: "Poppins";
+  font-size: 12px;
+  font-weight: 500;
   border: none;
   background: none;
   cursor: pointer;
@@ -646,11 +660,20 @@ figcaption .card-categorie {
   background-color: #D8D8D8;
   box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.0196078431);
   border: 0;
+  font-family: "Space Mono";
+  font-size: 12px;
+  transition: all ease-out 500ms;
 }
 @media (max-width: 768px) {
   #wpcf7-f18-o1 .wpcf7-form .wpcf7-submit {
     width: 190px;
   }
+}
+#wpcf7-f18-o1 .wpcf7-form .wpcf7-submit:hover {
+  background-color: #000000;
+  color: #FFFFFF;
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.0196078431);
+  font-weight: 700;
 }
 
 .lightbox {
@@ -1038,11 +1061,14 @@ figcaption .card-categorie {
   border-color: #D8D8D8;
   border-radius: 2px;
   transition: all ease-out 500ms;
+  font-family: "Space Mono";
+  font-size: 12px;
 }
 .large-buttons:hover {
   background-color: #000000;
   color: #FFFFFF;
   box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.0196078431);
+  font-weight: 700;
 }
 
 * {

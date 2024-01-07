@@ -107,9 +107,19 @@
         background-color: #D8D8D8;
         box-shadow: 0px 2px 1px 0px #00000005;
         border: 0;
+        font-family: "Space Mono";
+        font-size: 12px;
+        transition: all ease-out 500ms;
         @media (max-width:768px) {
             width: 190px;
-            } 
+        } 
+        &:hover {
+            background-color: #000000;
+            color: #FFFFFF;
+            box-shadow: 0px 2px 1px 0px #00000005;
+            font-weight: 700;
+        }
+
     }
 }
 
